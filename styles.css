@@ -202,8 +202,8 @@ table tbody tr td:last-child
 }
 /* Modal =====================*/
 .modal-overlay{
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0,0,0,.7);
   position: fixed;
   top: 0;
