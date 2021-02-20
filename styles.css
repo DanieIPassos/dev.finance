@@ -33,6 +33,40 @@ body{
   border-width: 0;
 }
 
+/* Dark Mode ===================*/
+.btn-switch{
+  margin-top: 20px;
+  display: flex;
+  justify-content:center;
+}
+
+.btn-switch a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #FFFFFF;
+  border-radius: 25px;
+}
+
+.btn-switch img {
+  margin: 0 5px 0 0;
+}
+
+
+.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.dark-bg{
+  background: #262626;
+}
+
+.invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+
 /* Titles =====================*/
 h2{
   margin-top: 3.2rem;

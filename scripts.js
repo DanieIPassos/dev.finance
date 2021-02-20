@@ -1,10 +1,5 @@
 const Modal = {
-  open(){
-    document
-      .querySelector('.modal-overlay')
-      .classList.toggle('active');
-  },
-  close(){
+  toggle(){
     document
       .querySelector('.modal-overlay')
       .classList.toggle('active');
@@ -70,7 +65,7 @@ const DOM = {
 
     const html = `
         <td class="description">${transaction.description}</td>
-        <td class="${CSSclass}">${amount}/td>
+        <td class="${CSSclass}">${amount}</td>
         <td class="date">${transaction.date}</td>
         <td>
           <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="remover transação">
@@ -167,7 +162,7 @@ const Form = {
       const transaction =  Form.formatValues()
       Transaction.add(transaction)
       Form.clearFields()
-      Modal.close()
+      Modal.toggle()
     } catch (error) {
       alert(error.message)
     }
@@ -187,6 +182,38 @@ const App = {
   reload(){
     DOM.clearTransactions()
     App.init()
+  }
+}
+
+const DarkMode = {
+  switch(){
+    document.documentElement.classList.toggle('dark-mode');
+
+    document.querySelectorAll('.inverted').forEach((element) => {
+      element.classList.toggle('invert');
+    })
+
+    document.querySelector('header').classList.toggle('dark-bg');
+
+    this.switchIcon();
+  },
+  switchIcon(){
+    const colorMode = document.querySelector('#color-mode')
+    const nameMode = document.querySelector('#switchName')
+    colorMode.classList.toggle('new-mode');
+    if(colorMode.classList.contains('new-mode')){
+      colorMode.src = "./assets/sun.svg"
+      nameMode.textContent = "Light Mode"
+      this.change()
+    } else {
+      colorMode.src = "./assets/moon.svg"
+      nameMode.textContent = "Dark Mode"
+      this.change()
+    }
+  },
+  change(){
+    const colorMode = document.querySelector('#color-mode')
+    colorMode.classList.toggle('invert');
   }
 }
 

@@ -14,6 +14,15 @@
 <body>
   <header>
     <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    <div class="btn-switch">
+      <a onclick="DarkMode.switch()" href="#">
+        <img
+        id="color-mode"
+        src="./assets/moon.svg"
+        alt="icon mode"
+        width="20px"
+        height="20px"><span id="switchName" >Dark Mode</span></a>
+    </div>
   </header>
 
   <main class="container">
@@ -22,23 +31,23 @@
       <div class="card">
         <h3>
           <span>Entradas</span>
-          <img src="./assets/income.svg" alt="imagem de entradas">
+          <img class="inverted" src="./assets/income.svg" alt="imagem de entradas">
         </h3>
-        <p id="incomeDisplay">R$ 0,00</p>
+        <p id="incomeDisplay" class="inverted">R$ 0,00</p>
       </div>
       <div class="card">
         <h3>
           <span>Saídas</span>
-          <img src="./assets/expense.svg" alt="Imagem de saida">
+          <img class="inverted" src="./assets/expense.svg" alt="Imagem de saida">
         </h3>
-        <p id="expenseDisplay">R$ 0,00</p>
+        <p id="expenseDisplay" class="inverted">R$ 0,00</p>
       </div>
       <div class="card total">
         <h3>
-          <span>Total</span>
-          <img src="./assets/total.svg" alt="imagem de total">
+          <span class="inverted">Total</span>
+          <img class="inverted" src="./assets/total.svg" alt="imagem de total">
         </h3>
-        <p id="totalDisplay">R$ 0,00</p>
+        <p id="totalDisplay" class="inverted">R$ 0,00</p>
       </div>
     </section>
 
@@ -47,7 +56,7 @@
 
       <a href="#"
       class="button new"
-      onclick="Modal.open()">+ Nova Transação</a>
+      onclick="Modal.toggle()">+ Nova Transação</a>
 
       <table id="data-table">
         <thead>
@@ -87,7 +96,7 @@
             type="number"
             step="0.01"
             id="amount" name="amount"
-            placeholder="Descrição">
+            placeholder="Valor">
             <small class="help">Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</small>
           </div>
 
@@ -104,7 +113,7 @@
           <div class="input-group actions">
             <a
             href="#"
-            onclick="Modal.close()"
+            onclick="Modal.toggle()"
             class="button cancel">Cancelar</a>
             <button>Salvar</button>
           </div>
