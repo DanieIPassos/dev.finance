@@ -17,4 +17,6 @@ This aplication was build with mobile first concepts and it is totally adaptably
 ## Modifications
 The app has a dark mode. This function is located under the logo. You can click and switch to dark mode or light mode
 
-![](./img/dev-mobile-night.jpg)
+<p align="center">
+  <img src="./img/dev-mobile-night.jpg" alt="dark mode">
+</p>
